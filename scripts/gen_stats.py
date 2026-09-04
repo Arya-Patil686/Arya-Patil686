@@ -10,6 +10,7 @@ from gen_assets import (Canvas, starfield, BG, GREEN, GREEN_D, PINK, CYAN,
 from pixfont import text_width
 
 USER  = os.environ.get("GH_USER", "Arya-Patil686")
+LC_USER = os.environ.get("LEETCODE_USER", "_arya__")
 TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 OUT   = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets")
 
@@ -49,6 +50,29 @@ def graphql(query, variables):
         "Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=30) as r:
         return json.load(r)["data"]
+
+
+def leetcode():
+    """Solved counts from LeetCode's public GraphQL endpoint. Returns None on any
+    failure — the DSA panel is simply omitted rather than breaking the card."""
+    q = ("query($u:String!){matchedUser(username:$u){submitStatsGlobal"
+         "{acSubmissionNum{difficulty count}}}}")
+    payload = json.dumps({"query": q, "variables": {"u": LC_USER}})
+    try:
+        r = subprocess.run(["curl", "-sS", "--max-time", "25", "-X", "POST",
+                            "https://leetcode.com/graphql",
+                            "-H", "Content-Type: application/json",
+                            "-H", f"Referer: https://leetcode.com/u/{LC_USER}/",
+                            "-A", "Mozilla/5.0", "-d", payload],
+                           capture_output=True, text=True, timeout=40)
+        d = json.loads(r.stdout)["data"]["matchedUser"]["submitStatsGlobal"]["acSubmissionNum"]
+        by = {x["difficulty"]: x["count"] for x in d}
+        if not by.get("All"):
+            return None
+        return by
+    except Exception as e:
+        print(f"  leetcode unavailable: {e}", file=sys.stderr)
+        return None
 
 
 def collect():
@@ -104,7 +128,8 @@ def collect():
             streak = run
         except Exception as e:
             print(f"  contribution calendar unavailable: {e}", file=sys.stderr)
-    return {"repos": len(own), "stars": stars, "followers": user["followers"],
+    return {"lc": leetcode(),
+            "repos": len(own), "stars": stars, "followers": user["followers"],
             "contribs": contribs, "streak": streak, "longest": longest,
             "since": since, "last_push": last_push, "n_langs": len(langs),
             "langs": langs.most_common(6), "total_lang": sum(langs.values())}
@@ -119,7 +144,8 @@ def panel(c, x, y, w, h, title, accent):
 
 
 def build(s):
-    W, H = 300, 96
+    lc = s.get("lc")
+    W, H = 300, (154 if lc else 102)
     c = Canvas(W, H)
     c.rect(0, 0, W, H, BG)
     starfield(c, 26, 5, 1, 1, W - 2, H - 2)
@@ -160,8 +186,30 @@ def build(s):
         c.text(294 - text_width(lab, 1), yy, lab, cols[i % 6], 1)
         yy += 11
 
+    if lc:
+        panel(c, 2, 90, 296, 48, "DSA.EXE", ORANGE)
+        total = lc.get("All", 0)
+        tw = text_width(f"{total} SOLVED ON LEETCODE", 1)
+        c.text(294 - tw, 94, f"{total} SOLVED ON LEETCODE", "#6f6f93", 1)
+        tiers = [("EASY", lc.get("Easy", 0), GREEN),
+                 ("MEDIUM", lc.get("Medium", 0), YELLOW),
+                 ("HARD", lc.get("Hard", 0), PINK)]
+        peak = max((v for _, v, _ in tiers), default=1) or 1
+        BX, BW = 78, 180
+        yy = 107
+        for i, (name, val, col) in enumerate(tiers):
+            c.text(8, yy, name, WHITE, 1)
+            c.rect(BX, yy + 1, BW, 5, "#1c1c30")
+            fill = max(1, round(BW * val / peak))
+            c.raw(f'<rect x="{px(BX)}" y="{px(yy + 1)}" width="{px(fill)}" '
+                  f'height="{px(5)}" fill="{col}">'
+                  f'<animate attributeName="width" values="0;{px(fill)}" dur="1.1s" '
+                  f'begin="{i * 0.14}s" fill="freeze"/></rect>')
+            c.text(BX + BW + 6, yy, str(val), col, 1)
+            yy += 11
+
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime("UPDATED %d %b %Y").upper()
-    c.text(W - 4 - text_width(stamp, 1), H - 7, stamp, "#3d3d5c", 1)
+    c.text(W - 4 - text_width(stamp, 1), H - 10, stamp, "#3d3d5c", 1)
     c.write("stats.svg")
 
 

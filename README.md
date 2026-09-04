@@ -13,6 +13,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-5CE1E6?style=flat-square&logo=linkedin&logoColor=05050A&labelColor=5CE1E6)](https://linkedin.com/in/arya-patil-b22977306)
 [![Email](https://img.shields.io/badge/Email-FF3FA4?style=flat-square&logo=gmail&logoColor=FFFFFF&labelColor=FF3FA4)](mailto:aryapatil8221@gmail.com)
+[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=flat-square&logo=leetcode&logoColor=05050A&labelColor=FFA116)](https://leetcode.com/u/_arya__/)
 ![Profile views](https://komarev.com/ghpvc/?username=Arya-Patil686&style=flat-square&color=FF3FA4&label=VISITORS)
 
 </div>
@@ -140,7 +141,8 @@ Learning Algorithms (DeepLearning.AI)</sub>
 
 <sub>Generated from the GitHub API by
 [`scripts/gen_stats.py`](scripts/gen_stats.py) and refreshed daily by
-[a workflow](.github/workflows/stats.yml) — no third-party stats service, so nothing
+[a workflow](.github/workflows/stats.yml), with the DSA panel read live from
+[LeetCode](https://leetcode.com/u/_arya__/) — no third-party stats service, so nothing
 here breaks when someone else's rate limit does.</sub>
 
 ---
@@ -153,6 +155,7 @@ here breaks when someone else's rate limit does.</sub>
 
 [![Email](https://img.shields.io/badge/aryapatil8221@gmail.com-FF3FA4?style=for-the-badge&logo=gmail&logoColor=FFFFFF&labelColor=FF3FA4)](mailto:aryapatil8221@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-5CE1E6?style=for-the-badge&logo=linkedin&logoColor=05050A&labelColor=5CE1E6)](https://linkedin.com/in/arya-patil-b22977306)
+[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=05050A&labelColor=FFA116)](https://leetcode.com/u/_arya__/)
 
 <img src="assets/footer.svg" alt="" width="100%">
 
