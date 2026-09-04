@@ -24,7 +24,7 @@
 
 I build systems where the hard part is the decision, not the demo — collision-avoidance
 planning for satellites, self-healing supply chains, transactional shell execution.
-Computer Engineering undergrad at **VIT Pune**, currently a software development intern
+Third-year Computer Engineering undergrad at **VIT Pune**, currently a software development intern
 on the **LearnGeeta** platform. I care about work that holds up under measurement:
 benchmarks against a real baseline, tests that mean something, and reproducibility scripts
 so the numbers survive a second run.

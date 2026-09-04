@@ -208,7 +208,7 @@ def build_banner():
     sprite(c, 284, 78, CLOUD, CLOUD_PAL, s=1)
 
     # ---- HUD ----
-    c.text(6, 3, "XP: B.TECH CSE // VIT PUNE", GREEN, 1)
+    c.text(6, 3, "XP: TY // VIT PUNE", GREEN, 1)
     sprite(c, 176, 3, ["...", ".^.", "..."], {"^": PINK}, s=1)
     c.text(174, 3, "^", PINK, 1)
     c.frame(184, 3, 48, 7, WHITE, 1)
@@ -347,7 +347,7 @@ def build_player_card():
     window(c, 2, 2, 180, 114, "PLAYER.DAT", [
         ("NAME    ARYA PATIL", "#8a0f4a"),
         "CLASS   SOFTWARE ENGINEER",
-        "SCHOOL  VIT PUNE - B.TECH CE",
+        "SCHOOL  VIT PUNE - TY, CE",
         "TERM    2024-2028 - CGPA 8.43",
         "BASE    PUNE, MAHARASHTRA, IN",
         None,
