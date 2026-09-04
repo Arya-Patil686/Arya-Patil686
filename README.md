@@ -36,32 +36,9 @@ so the numbers survive a second run.
 
 <img src="assets/hdr-arsenal.svg" alt="Level 02 — Arsenal" width="100%">
 
-**Languages**
-
-![C++](https://img.shields.io/badge/C++-7CF67C?style=flat-square&logo=cplusplus&logoColor=05050A&labelColor=7CF67C)
-![Python](https://img.shields.io/badge/Python-7CF67C?style=flat-square&logo=python&logoColor=05050A&labelColor=7CF67C)
-![Java](https://img.shields.io/badge/Java-7CF67C?style=flat-square&logo=openjdk&logoColor=05050A&labelColor=7CF67C)
-![JavaScript](https://img.shields.io/badge/JavaScript-7CF67C?style=flat-square&logo=javascript&logoColor=05050A&labelColor=7CF67C)
-![SQL](https://img.shields.io/badge/SQL-7CF67C?style=flat-square&logo=mysql&logoColor=05050A&labelColor=7CF67C)
-
-**Frameworks &amp; Libraries**
-
-![React](https://img.shields.io/badge/React-5CE1E6?style=flat-square&logo=react&logoColor=05050A&labelColor=5CE1E6)
-![React Native](https://img.shields.io/badge/React_Native-5CE1E6?style=flat-square&logo=react&logoColor=05050A&labelColor=5CE1E6)
-![Node.js](https://img.shields.io/badge/Node.js-5CE1E6?style=flat-square&logo=nodedotjs&logoColor=05050A&labelColor=5CE1E6)
-![Express](https://img.shields.io/badge/Express-5CE1E6?style=flat-square&logo=express&logoColor=05050A&labelColor=5CE1E6)
-![FastAPI](https://img.shields.io/badge/FastAPI-5CE1E6?style=flat-square&logo=fastapi&logoColor=05050A&labelColor=5CE1E6)
-![Flask](https://img.shields.io/badge/Flask-5CE1E6?style=flat-square&logo=flask&logoColor=05050A&labelColor=5CE1E6)
-
-**Data &amp; Infrastructure**
-
-![MySQL](https://img.shields.io/badge/MySQL-FF3FA4?style=flat-square&logo=mysql&logoColor=FFFFFF&labelColor=FF3FA4)
-![MongoDB](https://img.shields.io/badge/MongoDB-FF3FA4?style=flat-square&logo=mongodb&logoColor=FFFFFF&labelColor=FF3FA4)
-![Firebase](https://img.shields.io/badge/Firebase-FF3FA4?style=flat-square&logo=firebase&logoColor=FFFFFF&labelColor=FF3FA4)
-![Docker](https://img.shields.io/badge/Docker-FF3FA4?style=flat-square&logo=docker&logoColor=FFFFFF&labelColor=FF3FA4)
-![Linux](https://img.shields.io/badge/Linux-FF3FA4?style=flat-square&logo=linux&logoColor=FFFFFF&labelColor=FF3FA4)
-![Git](https://img.shields.io/badge/Git-FF3FA4?style=flat-square&logo=git&logoColor=FFFFFF&labelColor=FF3FA4)
-![Postman](https://img.shields.io/badge/Postman-FF3FA4?style=flat-square&logo=postman&logoColor=FFFFFF&labelColor=FF3FA4)
+<div align="center">
+<img src="assets/arsenal.svg" alt="Languages: C++, Python, Java, JavaScript, SQL. Frameworks: React, React Native, Node.js, Express, FastAPI, Flask. Data and infrastructure: MongoDB, Firebase, Docker, Linux, Git, Postman." width="100%">
+</div>
 
 **Concepts** &nbsp;`Data Structures & Algorithms` &nbsp;`OOP` &nbsp;`DBMS` &nbsp;`REST APIs`
 &nbsp;`Machine Learning` &nbsp;`Reinforcement Learning` &nbsp;`Quantum Machine Learning`

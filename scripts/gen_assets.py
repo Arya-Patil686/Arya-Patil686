@@ -1,5 +1,6 @@
 import os, random, math
 from pixfont import text_runs, text_width, FW, FH
+from pixicons import ICONS
 
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets")
 os.makedirs(OUT, exist_ok=True)
@@ -105,22 +106,51 @@ CAT = [
 CAT_PAL = {"#": WHITE, "O": "#222"}
 
 HERO = [
-    "..HHHH..",
-    ".HHHHHH.",
-    ".HSSSSH.",
-    ".SEWWES.",
-    ".SSSSSS.",
-    "..SPPS..",
-    ".GGGGGG.",
-    "GG.GG.GG",
-    "GG.GG.GG",
-    ".G.GG.G.",
-    "...GG...",
-    "..B..B..",
-    ".BB..BB.",
+    "....HHHHHHHH....",
+    "...HHHHHHHHHH...",
+    "..HHHHHHHHHHHH..",
+    "..HHHPPHHHHHHH..",
+    "..HHSSSSSSSSHH..",
+    "..HHSSSSSSSSHH..",
+    "..HHSEESSEESHH..",
+    "..HHSEESSEESHH..",
+    "..HHSSSSSSSSHH..",
+    "..HHSSSMMSSSHH..",
+    "..HHHSSSSSSHHH..",
+    "..HHHHSSSSHHHH..",
+    "...HHTTTTTTHH...",
+    "..HHTTTTTTTTHH..",
+    "..HHTTTTTTTTHH..",
+    "..HHTTTTTTTTHH..",
+    "...HTTTTTTTTH...",
+    "....TTTTTTTT....",
+    "....DDDDDDDD....",
+    "....DDD..DDD....",
+    "....DDD..DDD....",
+    "....DDD..DDD....",
+    "...WWWW..WWWW...",
+    "...WWWW..WWWW...",
 ]
-HERO_PAL = {"H": "#4a2c17", "S": "#e8b48c", "E": "#111", "W": WHITE, "P": "#c97b7b",
-            "G": GREEN, "B": "#ffffff"}
+HERO_PAL = {"H": "#3b2314", "S": "#f0c09a", "E": "#141414", "M": "#c2566b",
+            "T": "#7cf67c", "D": "#3a4a7a", "W": "#ffffff", "P": "#ff3fa4"}
+
+CAT = [
+    ".WW........WW.",
+    ".WWW......WWW.",
+    ".WWPW....WPWW.",
+    ".WWWWWWWWWWWW.",
+    "WWWWWWWWWWWWWW",
+    "WWKKWWWWKKWWWW",
+    "WWKKWWWWKKWWWW",
+    "WWWWWPPWWWWWWW",
+    "WWWWWWWWWWWWWW",
+    ".WWWWWWWWWWWW.",
+    ".WWWWWWWWWWWW.",
+    ".WWWWWWWWWWW..",
+    "..WWWWWWWWW.WW",
+    "..WW....WW..WW",
+]
+CAT_PAL = {"W": "#ffffff", "K": "#141414", "P": "#ff8ac4"}
 
 def starfield(c, n, seed, x0, y0, x1, y1, avoid=None):
     rnd = random.Random(seed)
@@ -217,10 +247,10 @@ def build_banner():
 
     # ---- characters / props ----
     c.raw('<g><animateTransform attributeName="transform" type="translate" '
-          'values="0 0; 0 -6; 0 0" dur="2.4s" repeatCount="indefinite"/>')
-    sprite(c, 6, 78, HERO, HERO_PAL, s=2)
+          'values="0 0; 0 -5; 0 0" dur="2.4s" repeatCount="indefinite"/>')
+    sprite(c, 3, 104 - len(HERO), HERO, HERO_PAL, s=1)
     c.raw('</g>')
-    sprite(c, 272, 88, CAT, CAT_PAL, s=2)
+    sprite(c, 283, 104 - len(CAT), CAT, CAT_PAL, s=1)
 
     for i, (cxp, cyp, d) in enumerate([(120, 96, 1.8), (152, 97, 2.4), (184, 96, 2.1)]):
         c.raw(f'<g><animateTransform attributeName="transform" type="translate" '
@@ -341,6 +371,59 @@ def build_player_card():
     c.write("player-card.svg")
 
 # =====================================================================
+# 4b. ARSENAL  — pixel technology tiles
+# =====================================================================
+ARSENAL = [
+    ("LANGUAGES", GREEN, [
+        ("C++", ["C++"]), ("PYTHON", ["PYTHON"]), ("JAVA", ["JAVA"]),
+        ("JAVASCRIPT", ["JAVA", "SCRIPT"]), ("SQL", ["SQL"])]),
+    ("FRAMEWORKS & LIBRARIES", CYAN, [
+        ("REACT", ["REACT"]), ("REACT NATIVE", ["REACT", "NATIVE"]),
+        ("NODE.JS", ["NODE.JS"]), ("EXPRESS", ["EXPRESS"]),
+        ("FASTAPI", ["FASTAPI"]), ("FLASK", ["FLASK"])]),
+    ("DATA & INFRASTRUCTURE", PINK, [
+        ("MONGODB", ["MONGODB"]), ("FIREBASE", ["FIREBASE"]), ("DOCKER", ["DOCKER"]),
+        ("LINUX", ["LINUX"]), ("GIT", ["GIT"]), ("POSTMAN", ["POSTMAN"])]),
+]
+
+SLOT_W, SLOT_H = 48, 40
+
+
+def build_arsenal():
+    W = 300
+    H = 4 + len(ARSENAL) * (10 + SLOT_H + 8)
+    c = Canvas(W, H)
+    c.rect(0, 0, W, H, BG)
+    starfield(c, 34, 41, 1, 1, W - 2, H - 2)
+
+    y = 4
+    for label, accent, items in ARSENAL:
+        c.rect(2, y, 2, 7, accent)
+        c.text(7, y, label, accent, 1)
+        end = 7 + text_width(label, 1) + 5
+        c.rects([(dx, y + 3, 2, 2) for dx in range(end, W - 4, 6)], "#242440")
+        y += 10
+
+        x0 = round((W - len(items) * SLOT_W) / 2)
+        for i, (key, lines) in enumerate(items):
+            sx = x0 + i * SLOT_W
+            c.rect(sx + 1, y, SLOT_W - 2, SLOT_H, "#0d0d1c")
+            c.frame(sx + 1, y, SLOT_W - 2, SLOT_H, "#242440", 1)
+            c.rects([(sx + 2, y + 1, 3, 1), (sx + 2, y + 1, 1, 3)], accent)
+            rows, pal = ICONS[key]
+            sprite(c, sx + (SLOT_W - 16) // 2, y + 4, rows, pal, s=1)
+            ty = y + 23
+            for ln in lines:
+                # tighten tracking rather than overflow the tile on long names
+                tr = 1 if text_width(ln, 1, 1) <= SLOT_W - 6 else 0
+                c.ctext(sx + SLOT_W / 2, ty, ln, WHITE, 1, tr)
+                ty += 9
+        y += SLOT_H + 8
+
+    c.write("arsenal.svg")
+
+
+# =====================================================================
 # 5. FOOTER
 # =====================================================================
 def build_footer():
@@ -374,4 +457,5 @@ if __name__ == "__main__":
     build_header("hdr-stats.svg",    "LEVEL 05", "GAME STATS", LILAC)
     build_header("hdr-contact.svg",  "SAVE PT.", "CONTACT",    GREEN)
     build_player_card()
+    build_arsenal()
     build_footer()
