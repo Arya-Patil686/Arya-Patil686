@@ -136,18 +136,17 @@ status-LED and error decoding) ·
 
 <img src="assets/hdr-trophies.svg" alt="Level 04 — Trophies" width="100%">
 
-| | Achievement |
-|:--|:--|
-| 🥈 | **First Runner-Up** — Hack Genesis, Hackers Occupied Pune (2026) · ₹5,000 prize for the SupplyChain AI Control Tower, 5-member team |
-| 🏆 | **Winner** — Internal Smart India Hackathon, VIT Pune (2026) |
-| 📄 | **Paper in preparation** — IEEE PuneCon 2026, Life Sciences track (QGene) |
-| 🎨 | **Creatives Director** — Vishwaconclave |
-| ⚙️ | **Executive Committee Member** — IEEE Student Branch, VIT Pune |
-| 🎓 | **Campus Ambassador** — E-Cell, IIT Bombay |
+**First Runner-Up** — Hack Genesis, Hackers Occupied Pune (2026). ₹5,000 prize for the
+SupplyChain AI Control Tower, built in a 5-member team.
 
-**Certifications** — The Complete Full-Stack Web Development Bootcamp (Dr. Angela Yu) ·
-Supervised Machine Learning: Regression and Classification (DeepLearning.AI) ·
-Advanced Learning Algorithms (DeepLearning.AI)
+**Winner** — Internal Smart India Hackathon, VIT Pune (2026).
+
+<sub>**Beyond the code** — Creatives Director at Vishwaconclave · Executive Committee Member,
+IEEE Student Branch, VIT Pune.</sub>
+
+<sub>**Certifications** — The Complete Full-Stack Web Development Bootcamp (Dr. Angela Yu) ·
+Supervised Machine Learning: Regression and Classification (DeepLearning.AI) · Advanced
+Learning Algorithms (DeepLearning.AI)</sub>
 
 ---
 
