@@ -1,3 +1,8 @@
+<!-- The pixel art is generated, not hand-edited.
+     Static pieces : python3 scripts/gen_assets.py
+     Live stats card: python3 scripts/gen_stats.py   (needs gh, or GH_TOKEN)
+     Local preview  : ./render.sh   -> _preview.png -->
+
 <div align="center">
 
 <img src="assets/banner.svg" alt="Arya Patil — Software Engineer" width="100%">
