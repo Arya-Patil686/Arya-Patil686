@@ -5,7 +5,7 @@
 
 <div align="center">
 
-<img src="assets/banner.svg" alt="Arya Patil — Software Engineer" width="100%">
+<img src="assets/banner.svg?v=2" alt="Arya Patil — Software Engineer" width="100%">
 
 <img src="assets/marquee.svg" alt="" width="100%">
 
@@ -30,7 +30,7 @@ benchmarks against a real baseline, tests that mean something, and reproducibili
 so the numbers survive a second run.
 
 <div align="center">
-<img src="assets/player-card.svg" alt="Player data and current quest" width="100%">
+<img src="assets/player-card.svg?v=2" alt="Player data and current quest" width="100%">
 </div>
 
 ---
