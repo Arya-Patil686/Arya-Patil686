@@ -453,7 +453,7 @@ if __name__ == "__main__":
     build_header("hdr-profile.svg",  "LEVEL 01", "THE PLAYER")
     build_header("hdr-arsenal.svg",  "LEVEL 02", "ARSENAL",    CYAN)
     build_header("hdr-missions.svg", "LEVEL 03", "MISSIONS",   YELLOW)
-    build_header("hdr-trophies.svg", "LEVEL 04", "TROPHIES",   ORANGE)
+    build_header("hdr-achievements.svg", "LEVEL 04", "ACHIEVEMENTS", ORANGE)
     build_header("hdr-stats.svg",    "LEVEL 05", "GAME STATS", LILAC)
     build_header("hdr-contact.svg",  "SAVE PT.", "CONTACT",    GREEN)
     build_player_card()
