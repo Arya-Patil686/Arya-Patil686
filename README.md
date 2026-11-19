@@ -1,162 +1,95 @@
-<!-- The pixel art is generated, not hand-edited.
-     Static pieces : python3 scripts/gen_assets.py
-     Live stats card: python3 scripts/gen_stats.py   (needs gh, or GH_TOKEN)
-     Local preview  : ./render.sh   -> _preview.png -->
+## Arya Patil
 
-<div align="center">
+Computer Engineering undergraduate at Vishwakarma Institute of Technology, Pune, and a software
+development intern on the LearnGeeta platform.
 
-<img src="assets/banner.svg" alt="Arya Patil — Software Engineer" width="100%">
+I build systems where the hard part is the decision rather than the interface — collision-avoidance
+planning for satellites, self-healing supply chains, transactional shell execution. I care about
+work that holds up under measurement: benchmarks against a real baseline, tests that mean something,
+and reproducibility scripts so the numbers survive a second run.
 
-<img src="assets/marquee.svg" alt="" width="100%">
+Open to software engineering internships. The fastest way to reach me is email.
 
-<br>
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-5CE1E6?style=flat-square&logo=linkedin&logoColor=05050A&labelColor=5CE1E6)](https://linkedin.com/in/arya-patil-b22977306)
-[![Email](https://img.shields.io/badge/Email-FF3FA4?style=flat-square&logo=gmail&logoColor=FFFFFF&labelColor=FF3FA4)](mailto:aryapatil8221@gmail.com)
-[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=flat-square&logo=leetcode&logoColor=05050A&labelColor=FFA116)](https://leetcode.com/u/_arya__/)
-![Profile views](https://komarev.com/ghpvc/?username=Arya-Patil686&style=flat-square&color=FF3FA4&label=VISITORS)
-
-</div>
+[aryapatil8221@gmail.com](mailto:aryapatil8221@gmail.com) &nbsp;·&nbsp;
+[LinkedIn](https://linkedin.com/in/arya-patil-b22977306) &nbsp;·&nbsp;
+[LeetCode](https://leetcode.com/u/_arya__/)
 
 ---
 
-<img src="assets/hdr-profile.svg" alt="Level 01 — The Player" width="100%">
+### Selected projects
 
-I build systems where the hard part is the decision, not the demo — collision-avoidance
-planning for satellites, self-healing supply chains, transactional shell execution.
-Third-year Computer Engineering undergrad at **VIT Pune**, currently a software development intern
-on the **LearnGeeta** platform. I care about work that holds up under measurement:
-benchmarks against a real baseline, tests that mean something, and reproducibility scripts
-so the numbers survive a second run.
+**[KAVACH](https://github.com/Arya-Patil686/kavach) — satellite collision avoidance**
+<br><sub>Python · orbital mechanics · React</sub>
 
-<div align="center">
-<img src="assets/player-card.svg" alt="Player data and current quest" width="100%">
-</div>
+Screens conjunction events between satellites, ranks them by risk, and recommends avoidance burns.
+Across a replay of 8,892 conjunction events it missed zero high-risk events against 18 for the
+baseline, while using 6.2% fewer manoeuvres and 13.8% less delta-v. Backed by 167 tests and a
+78-check reproducibility script.
+[Live demo](https://kavach-rust.vercel.app)
 
----
+**[Continuum](https://github.com/Arya-Patil686/continuum) — self-healing supply chain control tower**
+<br><sub>AI · optimisation · web</sub>
 
-<img src="assets/hdr-arsenal.svg" alt="Level 02 — Arsenal" width="100%">
+Detects supply-chain disruptions, traces them to a root cause, and plans recovery actions, then
+feeds outcomes back into the network model so repeat disruptions cause less damage. Ships with a
+working in-browser recovery solver. First Runner-Up at Hack Genesis; built in a team of five.
 
-<div align="center">
-<img src="assets/arsenal.svg" alt="Languages: C++, Python, Java, JavaScript, SQL. Frameworks: React, React Native, Node.js, Express, FastAPI, Flask. Data and infrastructure: MongoDB, Firebase, Docker, Linux, Git, Postman." width="100%">
-</div>
+**[SafeShell](https://github.com/Arya-Patil686/safeshell-demo) — transactional Linux command execution**
+<br><sub>Linux · overlayfs · Merkle hashing</sub>
 
-**Concepts** &nbsp;`Data Structures & Algorithms` &nbsp;`OOP` &nbsp;`DBMS` &nbsp;`REST APIs`
-&nbsp;`Machine Learning` &nbsp;`Reinforcement Learning` &nbsp;`Quantum Machine Learning`
+Runs shell commands inside an overlayfs sandbox so any command can be committed or rolled back as a
+single transaction, and verifies filesystem state with Merkle hashes so the safety guarantee holds
+regardless of which model or user issued the command. Submitted to the C-DAC Software Samprabhuta
+Mission as an 18,000-line codebase with a 390-test suite.
 
----
+**[QGene](https://github.com/Arya-Patil686/QGene-Quantum) — hybrid classical-quantum ML for BRCA1/2**
+<br><sub>Python · Qiskit · TypeScript</sub>
 
-<img src="assets/hdr-missions.svg" alt="Level 03 — Missions" width="100%">
+Classifies BRCA1 and BRCA2 genetic variants as pathogenic or benign using a hybrid classical-quantum
+model with conformal prediction for calibrated confidence. Paper in preparation for IEEE PuneCon
+2026, Life Sciences track.
 
-### `01` &nbsp; KAVACH — Satellite Collision Avoidance
+**[SETU](https://github.com/Arya-Patil686/setu) — sub-pixel registration of Chandrayaan-2 imagery**
+<br><sub>Python · computer vision · remote sensing</sub>
 
-> `Python` `Orbital Mechanics` `React`
->
-> Screening and manoeuvre-planning system that ranks conjunction risk between satellites and
-> recommends avoidance burns. Across a replay of **8,892 conjunction events** it missed
-> **zero** high-risk events against **18** for the baseline, while using **6.2% fewer
-> manoeuvres** and **13.8% less delta-v**. Backed by 167 tests and a 78-check
-> reproducibility script.
->
-> [`repository`](https://github.com/Arya-Patil686/kavach) &nbsp;·&nbsp; [`live demo`](https://kavach-rust.vercel.app)
+Sub-pixel multi-sensor registration of Chandrayaan-2 imagery against lunar reference maps. Built for
+Smart India Hackathon 2026, problem statement 26166 (ISRO).
+[Project page](https://arya-patil686.github.io/setu/)
 
-### `02` &nbsp; Continuum — Self-Healing Supply Chain Control Tower
+**[Crime Intelligence Command Center](https://github.com/Arya-Patil686/crime-intelligence-command-center)**
+<br><sub>JavaScript · Zoho Catalyst · AI</sub>
 
-> `AI` `Optimisation` `Web`
->
-> Detects supply-chain disruptions, traces them to a root cause, and plans recovery actions —
-> then feeds outcomes back into the network model so repeat disruptions cause less damage.
-> Ships with a working in-browser recovery solver. **First Runner-Up at Hack Genesis**,
-> built in a 5-member team.
->
-> [`repository`](https://github.com/Arya-Patil686/continuum)
+AI-assisted crime intelligence command center built for the Karnataka State Police Datathon 2026.
 
-### `03` &nbsp; SafeShell — Transactional Linux Command Execution
-
-> `Linux` `overlayfs` `Merkle Hashing`
->
-> Runs shell commands inside an overlayfs sandbox so any command can be committed or rolled
-> back as a single transaction, and verifies filesystem state with Merkle hashes so the safety
-> guarantee holds regardless of which model or user issued the command. Submitted to the
-> **C-DAC Software Samprabhuta Mission** as an 18,000-line codebase with a 390-test suite.
->
-> [`demo`](https://github.com/Arya-Patil686/safeshell-demo)
-
-### `04` &nbsp; QGene — Hybrid Classical-Quantum ML for BRCA1/2
-
-> `Python` `Quantum Machine Learning` `TypeScript`
->
-> Classifies BRCA1 and BRCA2 genetic variants as pathogenic or benign using a hybrid
-> classical-quantum model. Paper in preparation for **IEEE PuneCon 2026**, Life Sciences track.
->
-> [`repository`](https://github.com/Arya-Patil686/QGene-Quantum)
-
-### `05` &nbsp; SETU — Sub-Pixel Registration of Chandrayaan-2 Imagery
-
-> `Python` `Computer Vision` `Remote Sensing`
->
-> Sub-pixel multi-sensor registration of Chandrayaan-2 imagery against lunar reference maps.
-> Built for **Smart India Hackathon 2026**, problem statement 26166 (ISRO).
->
-> [`repository`](https://github.com/Arya-Patil686/setu-sih2026)
-
-### `06` &nbsp; Crime Intelligence Command Center
-
-> `JavaScript` `Zoho Catalyst` `AI`
->
-> AI-powered crime intelligence command center built for the **Karnataka State Police
-> Datathon 2026**.
->
-> [`repository`](https://github.com/Arya-Patil686/crime-intelligence-command-center)
-
-<sub>Also in the cabinet: [`pariksha`](https://github.com/Arya-Patil686/pariksha) (steganalysis of
-model weights + signed ML-BOM) · [`netra`](https://github.com/Arya-Patil686/netra) (on-device
-status-LED and error decoding) ·
-[`disaster-response-memory-system`](https://github.com/Arya-Patil686/disaster-response-memory-system)
-(multimodal retrieval with Qdrant)</sub>
+Also worth a look: [pariksha](https://github.com/Arya-Patil686/pariksha), steganalysis of model
+weights with a signed CycloneDX ML-BOM · [netra](https://github.com/Arya-Patil686/netra), on-device
+decoding of status LEDs and uncopyable error text ·
+[disaster-response-memory-system](https://github.com/Arya-Patil686/disaster-response-memory-system),
+multimodal retrieval over text, image and audio with Qdrant.
 
 ---
 
-<img src="assets/hdr-achievements.svg" alt="Level 04 — Achievements" width="100%">
+### Technical skills
 
-**First Runner-Up** — Hack Genesis, Hackers Occupied Pune (2026). ₹5,000 prize for the
-SupplyChain AI Control Tower, built in a 5-member team.
-
-**Winner** — Internal Smart India Hackathon, VIT Pune (2026).
-
-<sub>**Beyond the code**, former roles — Creatives Director at Vishwaconclave ·
-Executive Committee Member, IEEE Student Branch, VIT Pune.</sub>
-
-<sub>**Certifications** — The Complete Full-Stack Web Development Bootcamp (Dr. Angela Yu) ·
-Supervised Machine Learning: Regression and Classification (DeepLearning.AI) · Advanced
-Learning Algorithms (DeepLearning.AI)</sub>
+| | |
+|---|---|
+| **Languages** | C++, Python, Java, JavaScript, TypeScript, SQL |
+| **Frameworks** | React, React Native, Node.js, Express, FastAPI, Flask, Django |
+| **Data & infrastructure** | MongoDB, MySQL, Firebase, Docker, Linux, Git |
+| **Areas** | Data structures and algorithms, REST API design, machine learning, reinforcement learning, quantum machine learning |
 
 ---
 
-<img src="assets/hdr-stats.svg" alt="Level 05 — Game Stats" width="100%">
+### Recognition
 
-<div align="center">
-<img src="assets/stats.svg" alt="Live GitHub stats" width="100%">
-</div>
+- First Runner-Up, Hack Genesis (Hackers Occupied Pune), 2026 — supply chain AI control tower, team of five
+- Winner, Internal Smart India Hackathon, VIT Pune, 2026
 
-<sub>Generated from the GitHub API by
-[`scripts/gen_stats.py`](scripts/gen_stats.py) and refreshed daily by
-[a workflow](.github/workflows/stats.yml), with the DSA panel read live from
-[LeetCode](https://leetcode.com/u/_arya__/) — no third-party stats service, so nothing
-here breaks when someone else's rate limit does.</sub>
+### Beyond the code
 
----
+Creatives Director at Vishwaconclave; Executive Committee member, IEEE Student Branch, VIT Pune.
 
-<img src="assets/hdr-contact.svg" alt="Save Point — Contact" width="100%">
+### Certifications
 
-<div align="center">
-
-**Open to software engineering internships.** &nbsp;Fastest way to reach me is email.
-
-[![Email](https://img.shields.io/badge/aryapatil8221@gmail.com-FF3FA4?style=for-the-badge&logo=gmail&logoColor=FFFFFF&labelColor=FF3FA4)](mailto:aryapatil8221@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-5CE1E6?style=for-the-badge&logo=linkedin&logoColor=05050A&labelColor=5CE1E6)](https://linkedin.com/in/arya-patil-b22977306)
-[![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=05050A&labelColor=FFA116)](https://leetcode.com/u/_arya__/)
-
-<img src="assets/footer.svg" alt="" width="100%">
-
-</div>
+The Complete Full-Stack Web Development Bootcamp (Dr. Angela Yu) · Supervised Machine Learning:
+Regression and Classification (DeepLearning.AI) · Advanced Learning Algorithms (DeepLearning.AI)
